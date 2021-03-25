@@ -1,0 +1,62 @@
+body {
+  background: $rosa-claro;
+  border: 10px solid $rosa;
+  color: $laranja;
+
+  @include device(mobile) {
+    border: none;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p{
+    @include tipografia-1(20);
+}
+
+.title, 
+.title2{
+  @include tipografia-1(20);
+  text-transform: uppercase;
+  font-weight: bold;
+  @include device(mobile) {
+    margin-bottom: 40px;
+  }
+  &::after {
+    content: "";
+    display: block;
+    float: right;
+    width: 70%;
+    height: 2px;
+    background: $laranja;
+    margin-top: 14px;
+    @include device(tablet) {
+        width: 60%;
+      }
+  }
+  
+}
+
+.title2{
+  margin-bottom: 40px;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 27%;
+    float: none;
+    margin-left: 60px;
+}
+@include device(mobile) {
+  &::after {
+    width: 62%;
+    float: right;
+
+}
+}
+}
+
+
+

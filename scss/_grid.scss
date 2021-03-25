@@ -1,0 +1,145 @@
+// Variáveis do Grid
+
+$columns: 12;
+$gutter: 20px;
+$desktop: 1200px;
+$tablet: 760px;
+$mobile: 480px;
+
+// Box Sizing
+
+*, *::after, *::before{
+    box-sizing: border-box;  /* Ajusta o elemento de acordo com sua largura definida, mesmo que o elemento 
+    tenha adição de padding, o valor final da largura definida no width não será alterado, 
+    desta forma não quebrando o layout! Exemplo = definir um width: 200px e margin-left:20px,
+    o valor total não será 220px, e sim 200px (mantendo o tamanho original do width)*/
+
+}
+
+// Mixin de Media Queries
+
+@mixin device($size) {
+    @if $size == desktop {
+        @media screen and (min-width: $desktop){
+            @content;
+        } 
+    }
+    @else if $size == tablet {
+        @media screen and (min-width: $tablet) and (max-width: $desktop - 1){
+            @content;
+        }
+    }
+    @else if $size == mobile {
+        @media screen and (max-width: $tablet - 1){
+            @content;
+        }
+    }
+    
+}
+
+// Grid
+
+@function grid($col, $offset: false){
+    $width: $col / $columns * 100 + "%";
+    $result : calc(#{$width} - #{$gutter});
+    @if $offset == offset{
+        $gutter : $gutter / 2;
+        $result: calc(#{$width} + #{$gutter});
+    }
+    @return $result;
+}
+
+// Loop para o Grid
+
+@for $i from 1 through $columns{
+    .grid-#{$i}{
+        width: grid($i);
+    }
+}
+
+// Estrutura do Grid
+
+@mixin grid-deafault {
+    float: left;
+    min-height: 1px;
+    margin-left: $gutter / 2;
+    margin-right: $gutter / 2;
+
+    @include device(mobile){
+        width: 100%;
+        float: none;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+[class^="grid-"]{
+    @include grid-deafault();
+}
+
+// Estrutura do offset - que é a classe do grid que criará um espaço onde não tem conteúdo, para alinhar o layout
+
+@for $i from 1 through $columns{
+    .offset-#{$i}{
+        margin-left: grid($i, offset);
+        @extend %offset;
+    }
+}
+
+@include device(mobile){
+    %offset{
+        margin-left: 0px;
+    }
+}
+
+
+// ClearFix - Faz reconhecer o tamanho de um elemento, quando TODOS seus elementos filhos usam float
+
+@mixin clearfix{
+    &::after, &::before{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin container {
+    max-width: $desktop;
+    margin: 0 auto;
+    position: relative;
+
+    
+    @include device(tablet){
+    max-width: $tablet;
+    }
+
+    @include device(mobile){
+        max-width: $mobile;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    @include clearfix();
+    
+}
+
+@mixin row{
+    position: relative;
+    margin-left: $gutter / 2;
+    margin-right: $gutter / 2;
+
+    @include device(mobile){
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    @include clearfix();
+}
+
+.row{
+    @include row();
+}
+
+.container{
+    @include container();
+}

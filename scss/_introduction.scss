@@ -1,0 +1,70 @@
+.introduction{
+    margin-top: 60px;
+    @include device(mobile){
+        margin-top: 20px;
+    }
+}
+
+.logo{
+    margin-bottom: 60px;
+}
+
+.info{
+    max-width: 320px;
+    border-right: 2px solid $laranja;
+     p{
+         margin-top: 10px;
+     }
+     p:first-child{
+        border-bottom: 2px solid $laranja;
+        padding-bottom: 10px;
+     }
+}
+
+.photo{
+    width: 90%;
+    border: 8px solid $rosa;
+    @include device(tablet){
+        width: 100%;
+    }
+    @include device(mobile){
+        width: 100%;
+    }
+}
+
+.cellphone{
+   // color:;
+   @include device(mobile){
+       margin-bottom: 40px;
+   }
+   &::after{
+       content: '/ / / /';
+       display: block;
+       margin-top: 250px;
+       font-size: 190px;
+       letter-spacing: -70px;
+       color: $laranja;
+   }
+   @include device(tablet){
+       &::after{
+        margin-top: 80px;
+        font-size: 120px;
+        letter-spacing: -45px; 
+       }
+   }
+   @include device(mobile){
+    &::after{
+        display: none;
+       }
+   }
+
+}
+
+.open{
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    background: seagreen;
+    margin-left: 50px;
+}

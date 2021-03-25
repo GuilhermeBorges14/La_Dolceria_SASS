@@ -1,0 +1,21 @@
+.candy{
+    padding: 20px;
+    text-align: center;
+    font-size: 1.3em;
+    img{
+        border-radius: 50%;
+        border: 8px solid $rosa;
+        margin: 0 auto;
+        margin-bottom: 10px;
+
+    }
+
+    @include device(mobile){
+        
+        img{
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+    }
+}
+

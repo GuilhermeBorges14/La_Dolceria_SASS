@@ -1,0 +1,14 @@
+footer{
+    margin-top: 40px;
+    padding: 20px 0;
+    background: $rosa;
+    color: white;
+    p{
+        margin-top: 5px;
+    }
+    @include device(mobile){
+        p{
+            font-size: 1em;
+        }
+    }
+}

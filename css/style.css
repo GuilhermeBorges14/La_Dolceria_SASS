@@ -1,0 +1,488 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  /* Ajusta o elemento de acordo com sua largura definida, mesmo que o elemento 
+    tenha adição de padding, o valor final da largura definida no width não será alterado, 
+    desta forma não quebrando o layout! Exemplo = definir um width: 200px e margin-left:20px,
+    o valor total não será 220px, e sim 200px (mantendo o tamanho original do width)*/
+}
+
+.grid-1 {
+  width: calc(8.33333% - 20px);
+}
+
+.grid-2 {
+  width: calc(16.66667% - 20px);
+}
+
+.grid-3 {
+  width: calc(25% - 20px);
+}
+
+.grid-4 {
+  width: calc(33.33333% - 20px);
+}
+
+.grid-5 {
+  width: calc(41.66667% - 20px);
+}
+
+.grid-6 {
+  width: calc(50% - 20px);
+}
+
+.grid-7 {
+  width: calc(58.33333% - 20px);
+}
+
+.grid-8 {
+  width: calc(66.66667% - 20px);
+}
+
+.grid-9 {
+  width: calc(75% - 20px);
+}
+
+.grid-10 {
+  width: calc(83.33333% - 20px);
+}
+
+.grid-11 {
+  width: calc(91.66667% - 20px);
+}
+
+.grid-12 {
+  width: calc(100% - 20px);
+}
+
+[class^="grid-"] {
+  float: left;
+  min-height: 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 759px) {
+  [class^="grid-"] {
+    width: 100%;
+    float: none;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.offset-1 {
+  margin-left: calc(8.33333% + 10px);
+}
+
+.offset-2 {
+  margin-left: calc(16.66667% + 10px);
+}
+
+.offset-3 {
+  margin-left: calc(25% + 10px);
+}
+
+.offset-4 {
+  margin-left: calc(33.33333% + 10px);
+}
+
+.offset-5 {
+  margin-left: calc(41.66667% + 10px);
+}
+
+.offset-6 {
+  margin-left: calc(50% + 10px);
+}
+
+.offset-7 {
+  margin-left: calc(58.33333% + 10px);
+}
+
+.offset-8 {
+  margin-left: calc(66.66667% + 10px);
+}
+
+.offset-9 {
+  margin-left: calc(75% + 10px);
+}
+
+.offset-10 {
+  margin-left: calc(83.33333% + 10px);
+}
+
+.offset-11 {
+  margin-left: calc(91.66667% + 10px);
+}
+
+.offset-12 {
+  margin-left: calc(100% + 10px);
+}
+
+@media screen and (max-width: 759px) {
+  .offset-1, .offset-2, .offset-3, .offset-4, .offset-5, .offset-6, .offset-7, .offset-8, .offset-9, .offset-10, .offset-11, .offset-12 {
+    margin-left: 0px;
+  }
+}
+
+.row {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 759px) {
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.row::after, .row::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1199px) {
+  .container {
+    max-width: 760px;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .container {
+    max-width: 480px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.container::after, .container::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+body {
+  background: #FFE4D9;
+  border: 10px solid #FFADA6;
+  color: #BC8312;
+}
+
+@media screen and (max-width: 759px) {
+  body {
+    border: none;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  font-family: "PT Mono", monospace;
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+.title,
+.title2 {
+  font-family: "PT Mono", monospace;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 759px) {
+  .title,
+  .title2 {
+    margin-bottom: 40px;
+  }
+}
+
+.title::after,
+.title2::after {
+  content: "";
+  display: block;
+  float: right;
+  width: 70%;
+  height: 2px;
+  background: #BC8312;
+  margin-top: 14px;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1199px) {
+  .title::after,
+  .title2::after {
+    width: 60%;
+  }
+}
+
+.title2 {
+  margin-bottom: 40px;
+}
+
+.title2::after {
+  content: "";
+  display: inline-block;
+  width: 27%;
+  float: none;
+  margin-left: 60px;
+}
+
+@media screen and (max-width: 759px) {
+  .title2::after {
+    width: 62%;
+    float: right;
+  }
+}
+
+.introduction {
+  margin-top: 60px;
+}
+
+@media screen and (max-width: 759px) {
+  .introduction {
+    margin-top: 20px;
+  }
+}
+
+.logo {
+  margin-bottom: 60px;
+}
+
+.info {
+  max-width: 320px;
+  border-right: 2px solid #BC8312;
+}
+
+.info p {
+  margin-top: 10px;
+}
+
+.info p:first-child {
+  border-bottom: 2px solid #BC8312;
+  padding-bottom: 10px;
+}
+
+.photo {
+  width: 90%;
+  border: 8px solid #FFADA6;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1199px) {
+  .photo {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .photo {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .cellphone {
+    margin-bottom: 40px;
+  }
+}
+
+.cellphone::after {
+  content: '/ / / /';
+  display: block;
+  margin-top: 250px;
+  font-size: 190px;
+  letter-spacing: -70px;
+  color: #BC8312;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1199px) {
+  .cellphone::after {
+    margin-top: 80px;
+    font-size: 120px;
+    letter-spacing: -45px;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .cellphone::after {
+    display: none;
+  }
+}
+
+.open {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 50%;
+  background: seagreen;
+  margin-left: 50px;
+}
+
+.menu {
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+@media screen and (max-width: 759px) {
+  .menu {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+.menu-item {
+  margin-bottom: 60px;
+}
+
+.menu-item h2 {
+  font-family: "Aref Ruqaa", serif;
+  font-size: 1.625em;
+  line-height: 1.15385em;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+.menu-item li {
+  font-family: "PT Mono", monospace;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  line-height: 1.75em;
+}
+
+.menu-item span {
+  font-family: "Aref Ruqaa", serif;
+  color: #BC8312;
+  font-weight: bold;
+  width: 85px;
+  display: inline-block;
+}
+
+.menu-item img {
+  border-radius: 50%;
+  border: 8px solid #FFADA6;
+  position: absolute;
+  right: 0px;
+}
+
+@media screen and (min-width: 1200px) {
+  .menu-item img {
+    right: 100px;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 760px) and (max-width: 1199px) {
+  .menu-item img {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .menu-item img {
+    margin-top: 60px;
+    max-width: 130px;
+    margin-right: 5px;
+  }
+}
+
+.candy {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.candy img {
+  border-radius: 50%;
+  border: 8px solid #FFADA6;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 759px) {
+  .candy img {
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  background: #FFADA6;
+  color: white;
+}
+
+footer p {
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 759px) {
+  footer p {
+    font-size: 1em;
+  }
+}
